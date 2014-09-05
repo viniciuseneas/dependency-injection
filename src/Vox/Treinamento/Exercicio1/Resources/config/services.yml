@@ -1,12 +1,6 @@
 parameters:
-    # ...
-    mailer.transport: sendmail
-
+    exercicio1.cafe.class: 'Vox\Treinamento\Exercicio1\Model\Cafe'
 services:
-    teste:
-        class:     "Vox\Treinamento\DependencyInjection\Teste"
-
-    teste_manager:
-        class:     "Vox\Treinamento\DependencyInjection\TesteManager"
-        arguments: ["@teste"]
+    exercicio1.cafe:
+        class:     "%exercicio1.cafe.class%"
         

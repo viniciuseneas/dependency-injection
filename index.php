@@ -5,6 +5,10 @@ use Symfony\Component\Debug\Debug;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Vox\Treinamento\Exercicio1\Exercicio1Extension;
+use Vox\Treinamento\Exercicio1\Model\Cafe;
+use Vox\Treinamento\Exercicio1\Model\Leite;
+use Vox\Treinamento\Exercicio1\Model\Chocolate;
+use Vox\Treinamento\Exercicio1\Model\Creme;
 
 require 'vendor/autoload.php';
 
@@ -19,6 +23,19 @@ $container->loadFromExtension($extension->getAlias());
 
 $container->compile();
 
-$tm = $container->get('teste_manager');
+$tm = $container->get('exercicio1.cafe');
 
-var_dump($tm);
+
+
+
+echo "<h1>EXERCICIO 1 - STARBUCKS COM DEPENDENCY INJECTION E COMPOSITE<h2>";
+
+$cafe = new Cafe();
+$cafe->addAdicional(new Leite());
+$cafe->addAdicional(new Chocolate());
+$cafe->addAdicional(new Creme());
+
+echo "<p>Café sai por :".$cafe->calcValor()."</p>";
+
+
+
