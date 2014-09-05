@@ -1,0 +1,12 @@
+parameters:
+    # ...
+    mailer.transport: sendmail
+
+services:
+    teste:
+        class:     "Vox\Treinamento\DependencyInjection\Teste"
+
+    teste_manager:
+        class:     "Vox\Treinamento\DependencyInjection\TesteManager"
+        arguments: ["@teste"]
+        

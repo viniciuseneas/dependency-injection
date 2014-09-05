@@ -1,0 +1,23 @@
+{
+    "name": "vox/treinamento-dependency-injection",
+    "description": "Repositorio para o treinamento de dependency injection",
+    "authors": [
+        {
+            "name": "Italo Lelis",
+            "email": "italo@voxtecnologia.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "symfony/dependency-injection": "~2.5",
+        "symfony/yaml": "~2.5",
+        "symfony/config": "~2.5",
+        "symfony/debug": "~2.5",
+        "ocramius/proxy-manager": "~0.5",
+        "symfony/proxy-manager-bridge": "~2.5"
+    }
+}
