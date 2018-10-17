@@ -18,18 +18,29 @@ use Vox\Treinamento\Exercicio1\Interfaces\ProdutoInterface;
  */
 class Cafe implements ProdutoInterface
 {
+    /**
+    * @var string
+    */
+
     protected $descricao;
+    /**
+    * @var float
+    */
+
     protected $preco;
     /**
-     *
      * @var \ArrayObject
      */
     protected $adicionais;
-    
 
+    /**
+    * @param AdicionalInterface $adicional
+    * @return $this
+    */
     public function addAdicional(AdicionalInterface $adicional)
     {
         $this->adicionais->append($adicional);
+
         return $this;
     }
 
@@ -43,6 +54,7 @@ class Cafe implements ProdutoInterface
     public function calcValor()
     {
         $preco = $this->preco;
+
         foreach ($this->adicionais as $adicional) {
             $preco += $adicional->getPreco();
         }
@@ -63,12 +75,14 @@ class Cafe implements ProdutoInterface
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
+
         return $this;
     }
 
     public function setPreco($preco)
     {
         $this->preco = $preco;
+
         return $this;
     }
 
