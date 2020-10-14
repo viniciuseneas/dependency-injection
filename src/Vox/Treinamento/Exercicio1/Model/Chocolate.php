@@ -1,12 +1,7 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Vox\Treinamento\Exercicio1\Model;
+
 use Vox\Treinamento\Exercicio1\Interfaces\AdicionalInterface;
 
 /**
@@ -16,7 +11,13 @@ use Vox\Treinamento\Exercicio1\Interfaces\AdicionalInterface;
  */
 class Chocolate implements \Vox\Treinamento\Exercicio1\Interfaces\AdicionalInterface
 {
+    /**
+     * @var string
+     */
     protected $descricao;
+    /**
+     * @var float
+     */
     protected $preco;
     
     public function __construct()
@@ -24,11 +25,16 @@ class Chocolate implements \Vox\Treinamento\Exercicio1\Interfaces\AdicionalInter
         $this->descricao = 'Chocolate';
         $this->preco = 1.00;
     }
+    /**
+     * @return string
+     */
     public function getDescricao()
     {
         return $this->descricao;
     }
-
+    /**
+     * @return float
+     */
     public function getPreco()
     {
         return $this->preco;
